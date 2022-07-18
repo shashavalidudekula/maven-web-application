@@ -18,9 +18,9 @@ node{
     stage('UploadArtifactToNexus'){
         sh "${mavenHome}/bin/mvn deploy"
     }
-    */
+    
      stage('DeployToTomcat'){
         deploy adapters: [tomcat9(credentialsId: '53f27d79-3a3c-4536-a262-61c419a0e0df', path: '', url: 'http://172.31.38.222:8080/')], contextPath: '/maven-web-application', onFailure: false, war: '**/maven-web-application.war'
     }
-    
+    */
 }
